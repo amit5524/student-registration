@@ -3,6 +3,7 @@
 
 class StudentController{
 
+  // To add the record of student
   public function add($firstname,$lastname,$dob,$contact){
     try {
       global $pdo;
@@ -13,6 +14,7 @@ class StudentController{
     }
   }
   
+  // To update the record of student
   public function update($firstname,$lastname,$dob,$contact,$id){
     try {
       global $pdo;
@@ -23,6 +25,7 @@ class StudentController{
     }
   }
 
+  // To delete a specific record of student
   public function delete($id){
     try {
       global $pdo;
@@ -40,6 +43,7 @@ class StudentController{
     }
   }
 
+  // To get all records of student
   public function all($fetchType = PDO::FETCH_OBJ){
     try {
       global $pdo;
@@ -51,6 +55,7 @@ class StudentController{
     }
   }  
   
+  // To get a specific record of student
   public function byId($id){
     try {
       global $pdo;

@@ -1,10 +1,8 @@
 <?php 
 	require '../include/db.php';
     require 'StudentController.php';
-?>
 
-<?php 
-
+// Action to register a student
 if (isset($_POST['register'])) {
 	$firstname = htmlspecialchars(strip_tags($_POST['firstname']));
 	$lastname = htmlspecialchars(strip_tags($_POST['lastname']));
@@ -18,6 +16,7 @@ if (isset($_POST['register'])) {
 	}
 }
 
+// Action to update a student
 if (isset($_POST['update'])) {
 	$firstname = htmlspecialchars(strip_tags($_POST['firstname']));
 	$lastname = htmlspecialchars(strip_tags($_POST['lastname']));
@@ -32,10 +31,11 @@ if (isset($_POST['update'])) {
 	}
 }
 
+// Action to delete a student
 if (isset($_GET['id'])) {
 	$student = new StudentController();
 	$result = $student->delete($_GET['id']);
 	header("location:index.php?deleted");
 }
 
-
+?>

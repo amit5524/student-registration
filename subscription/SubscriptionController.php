@@ -3,6 +3,7 @@
 
 class SubscriptionController{
 
+  // To add the record of subscription
   public function add($student_id,$course_id){
     try {
       global $pdo;
@@ -13,6 +14,7 @@ class SubscriptionController{
     }
   }
   
+  // To get all record of subscription
   public function all($fetchType = PDO::FETCH_OBJ){
     try {
       global $pdo;

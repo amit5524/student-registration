@@ -1,10 +1,8 @@
 <?php 
 	require '../include/db.php';
     require 'CourseController.php';
-?>
-
-<?php 
-
+ 
+// Action to register a course
 if (isset($_POST['register'])) {
 	$course_name = htmlspecialchars(strip_tags($_POST['course_name']));
 	$course_details = htmlspecialchars(strip_tags($_POST['course_details']));
@@ -16,6 +14,7 @@ if (isset($_POST['register'])) {
 	}
 }
 
+// Action to update a course
 if (isset($_POST['update'])) {
 	$course_name = htmlspecialchars(strip_tags($_POST['course_name']));
 	$course_details = htmlspecialchars(strip_tags($_POST['course_details']));
@@ -28,10 +27,11 @@ if (isset($_POST['update'])) {
 	}
 }
 
+// Action to delete a course
 if (isset($_GET['id'])) {
 	$course = new CourseController();
 	$result = $course->delete($_GET['id']);
 	header("location:index.php?deleted");
 }
 
-
+?>

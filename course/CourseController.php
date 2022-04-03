@@ -3,6 +3,7 @@
 
 class CourseController{
 
+  // To add the course
   public function add($course_name,$course_details){
     try {
       global $pdo;
@@ -13,6 +14,7 @@ class CourseController{
     }
   }
   
+  // To update the course
   public function update($course_name,$course_details,$id){
     try {
       global $pdo;
@@ -23,6 +25,7 @@ class CourseController{
     }
   }
 
+  // To delete the course
   public function delete($id){
     try {
       global $pdo;
@@ -39,6 +42,7 @@ class CourseController{
     }
   }
 
+  // To get all the records of course
   public function all($fetchType = PDO::FETCH_OBJ){
     try {
       global $pdo;
@@ -50,6 +54,7 @@ class CourseController{
     }
   }  
   
+  // To get a specific record of course
   public function byId($id){
     try {
       global $pdo;
